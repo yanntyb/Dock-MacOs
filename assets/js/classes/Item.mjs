@@ -30,7 +30,6 @@ class Item{
      */
     saveToLocalStorage(){
         if(this.save){
-            console.log(this.save);
             let currentLocal = JSON.parse(localStorage.getItem("items")) || [];
             currentLocal[this.id] = {
                 "href": this.href,
