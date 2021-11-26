@@ -25,35 +25,18 @@ class Dock{
     addEventMove(){
         const witdh = getComputedStyle(this.div.querySelector("a")).width;
         this.moveLeft.addEventListener("click", () => {
-            this.div.dataset.side = "true";
-            this.div.style.flexDirection = "column";
-            this.div.style.alignItems = "flex-start";
-            this.parent.style.alignItems = "flex-end";
-            this.div.style.margin = "0%";
-            this.div.style.marginLeft = "5%";
-            this.div.style.height = "100%";
+            this.changeCss("true","column","flex-start","flex-end","5%","0%","100%")
             for(let item of this.item){
                 item.image.style.width = witdh;
             }
 
         });
         this.moveBottom.addEventListener("click", () => {
-            this.div.dataset.side = "false";
-            this.div.style.flexDirection = "row";
-            this.div.style.alignItems = "center";
-            this.parent.style.alignItems = "flex-end";
-            this.div.style.margin = "5%";
-            this.div.style.height = "5%";
+            this.changeCss("false","row","center","flex-end","0%","5%","5%")
 
         });
         this.moveRight.addEventListener("click", () => {
-            this.div.dataset.side = "true";
-            this.div.style.flexDirection = "column";
-            this.parent.style.alignItems = "flex-end";
-            this.div.style.alignItems = "flex-end";
-            this.div.style.margin = "0%";
-            this.div.style.marginRight = "5%";
-            this.div.style.height = "100%";
+            this.changeCss("true","column","flex-end","flex-end","0%","0%","100%","5%")
             for(let item of this.item){
                 item.image.style.width = witdh;
             }
@@ -66,6 +49,7 @@ class Dock{
             this.parent.style.alignItems = "flex-start";
             this.div.style.margin = "5%";
             this.div.style.height = "5%";
+            this.changeCss("false","row","center","flex-start","0%","5%","5%")
 
         })
     }
@@ -210,6 +194,16 @@ class Dock{
         }
     }
 
+    changeCss(dataSide,divFlexDirection,divAlignItems,parentAlignItem,divMarginLeft,divMargin,divHeight,divMarginRight = "0%"){
+        this.div.dataset.side = dataSide;
+        this.parent.style.alignItems = parentAlignItem;
+        this.div.style.flexDirection = divFlexDirection;
+        this.div.style.alignItems = divAlignItems;
+        this.div.style.margin = divMargin;
+        this.div.style.marginLeft = divMarginLeft;
+        this.div.style.marginRight = divMarginRight;
+        this.div.style.height = divHeight;
+    }
 
 }
 
