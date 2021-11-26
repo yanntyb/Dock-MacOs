@@ -252,7 +252,9 @@ class Dock{
         this.addEventMove();
         let currentLocalStorage = JSON.parse(localStorage.getItem("items")) || [];
         for(let item of Object.keys(currentLocalStorage)){
-            this.addItem(currentLocalStorage[item].href,false,currentLocalStorage[item].imglink,false);
+            if(currentLocalStorage[item] !== null){
+                this.addItem(currentLocalStorage[item].href,false,currentLocalStorage[item].imglink,false);
+            }
         }
     }
 }
