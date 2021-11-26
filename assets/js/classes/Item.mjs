@@ -10,9 +10,10 @@ class Item{
         this.saveToLocalStorage();
     }
 
-
+    /**
+     * Create element in Dom
+     */
     createDom(){
-
         this.parent.appendChild(this.image);
         this.image.classList.add("item");
         this.image.setAttribute("href",this.href);
@@ -24,6 +25,9 @@ class Item{
 
     }
 
+    /**
+     * Save item to localstorage
+     */
     saveToLocalStorage(){
         if(this.save){
             console.log(this.save);
