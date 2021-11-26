@@ -1,11 +1,13 @@
 class Item{
-    constructor(parent,href,index,first,imageLink){
+    constructor(parent,href,index,first,imageLink,save){
         this.parent = parent;
         this.href = href;
         this.id = index;
         this.imageLink = imageLink;
+        this.save = save;
         this.image = document.createElement("a");
         this.createDom();
+        this.saveToLocalStorage();
     }
 
 
@@ -22,6 +24,19 @@ class Item{
 
     }
 
+    saveToLocalStorage(){
+        if(this.save){
+            console.log(this.save);
+            let currentLocal = JSON.parse(localStorage.getItem("items")) || [];
+            currentLocal[this.id] = {
+                "href": this.href,
+                "id": this.id,
+                "imglink": this.imageLink
+            };
+            localStorage.setItem("items",JSON.stringify(currentLocal));
+        }
+
+    }
 }
 
 export {Item};

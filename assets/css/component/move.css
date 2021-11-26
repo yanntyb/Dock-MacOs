@@ -1,14 +1,17 @@
 #move{
     position:absolute;
-    top: 75%;
+    top: 65%;
     font-size: 250%;
     color: orangered;
     width: 100%;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #move > * {
-    margin-left: 2%;
+    margin-right: 2%;
 }
 
 #move > *:hover{
