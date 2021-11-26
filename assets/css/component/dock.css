@@ -8,8 +8,5 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 5% 0;
 }
