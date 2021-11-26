@@ -4,4 +4,4 @@ import "./css/component/move.css";
 
 import {Dock} from "./js/classes/Dock.mjs";
 
-new Dock();
+const dock = new Dock();
