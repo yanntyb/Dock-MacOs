@@ -43,12 +43,6 @@ class Dock{
 
         })
         this.moveTop.addEventListener("click", () => {
-            this.div.dataset.side = "false";
-            this.div.style.flexDirection = "row";
-            this.div.style.alignItems = "center";
-            this.parent.style.alignItems = "flex-start";
-            this.div.style.margin = "5%";
-            this.div.style.height = "5%";
             this.changeCss("false","row","center","flex-start","0%","5%","5%")
 
         })
